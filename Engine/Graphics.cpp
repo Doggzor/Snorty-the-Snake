@@ -316,6 +316,60 @@ void Graphics::PutPixel( int x,int y,Color c )
 	pSysBuffer[Graphics::ScreenWidth * y + x] = c;
 }
 
+void Graphics::DrawRect(int x0, int y0, int x1, int y1, Color c)
+{
+	if (x0 > x1)
+	{
+		std::swap(x0, x1);
+	}
+	if (y0 > y1)
+	{
+		std::swap(y0, y1);
+	}
+	for (int x = x0; x < x1; ++x)
+	{
+		for (int y = y0; y < y1; ++y)
+		{
+			PutPixel(x, y, c);
+		}
+	}
+}
+
+void Graphics::DrawCircle(int x, int y, int r, Color c)
+{
+	const int r_sq = r * r;
+	for (int b = 0; y + b * b < y + r_sq; ++b)
+	{
+		for (int a = 0; x + a * a < x + r_sq - b * b; ++a)
+		{
+			if ((x + a < ScreenWidth - 1) && (y + b < ScreenHeight - 1))
+				PutPixel(x + a, y + b, c);
+			if ((x + a < ScreenWidth - 1) && (y - b >= 0))
+				PutPixel(x + a, y - b, c);
+			if ((x - a >= 0) && (y + b < ScreenHeight - 1))
+				PutPixel(x - a, y + b, c);
+			if ((x - a >= 0) && (y - b >= 0))
+				PutPixel(x - a, y - b, c);
+		}
+	}
+}
+
+void Graphics::DrawCircleEmpty(int x, int y, int r, Color c)
+{
+	const int r_sq = r * r;
+	for (int b = y - r + 1; b < y + r; ++b)
+	{
+		for (int a = x - r + 1; a < x + r; ++a)
+		{
+			const int x_diff = x - a;
+			const int y_diff = y - b;
+			if ((x_diff * x_diff + y_diff * y_diff <= r_sq) && (x_diff * x_diff + y_diff * y_diff > r_sq - r * 3))
+			{
+				PutPixel(a, b, c);
+			}
+		}
+	}
+}
 
 //////////////////////////////////////////////////
 //           Graphics Exception
