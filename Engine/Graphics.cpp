@@ -330,6 +330,7 @@ void Graphics::DrawRect(int x0, int y0, int x1, int y1, Color c)
 	{
 		for (int y = y0; y < y1; ++y)
 		{
+			if(x >= 0 && x < ScreenWidth && y >= 0 && y < ScreenHeight)
 			PutPixel(x, y, c);
 		}
 	}
@@ -342,11 +343,11 @@ void Graphics::DrawCircle(int x, int y, int r, Color c)
 	{
 		for (int a = 0; x + a * a < x + r_sq - b * b; ++a)
 		{
-			if ((x + a < ScreenWidth - 1) && (y + b < ScreenHeight - 1))
+			if ((x + a < ScreenWidth) && (y + b < ScreenHeight))
 				PutPixel(x + a, y + b, c);
-			if ((x + a < ScreenWidth - 1) && (y - b >= 0))
+			if ((x + a < ScreenWidth) && (y - b >= 0))
 				PutPixel(x + a, y - b, c);
-			if ((x - a >= 0) && (y + b < ScreenHeight - 1))
+			if ((x - a >= 0) && (y + b < ScreenHeight))
 				PutPixel(x - a, y + b, c);
 			if ((x - a >= 0) && (y - b >= 0))
 				PutPixel(x - a, y - b, c);
@@ -365,6 +366,7 @@ void Graphics::DrawCircleEmpty(int x, int y, int r, Color c)
 			const int y_diff = y - b;
 			if ((x_diff * x_diff + y_diff * y_diff <= r_sq) && (x_diff * x_diff + y_diff * y_diff > r_sq - r * 3))
 			{
+				if(a >= 0 && a < ScreenWidth && b >=0 && b < ScreenHeight)
 				PutPixel(a, b, c);
 			}
 		}
