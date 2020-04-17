@@ -4,7 +4,7 @@
 class Numbers
 {
 public:
-	void draw(int x, int y, int num, Graphics& gfx) const;
+	void Draw(int x, int y, int num, Graphics& gfx) const;
 private:
 	void drawnum0(int x, int y, Graphics& gfx) const;
 	void drawnum1(int x, int y, Graphics& gfx) const;

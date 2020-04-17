@@ -1,7 +1,7 @@
 #include "Numbers.h"
 
 
-void Numbers::draw(int x, int y, int num, Graphics& gfx) const
+void Numbers::Draw(int x, int y, int num, Graphics& gfx) const
 {
 	int offset0 = 0;
 	int offset1 = 0;
