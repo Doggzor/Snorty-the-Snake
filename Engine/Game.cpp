@@ -39,8 +39,18 @@ void Game::Go()
 void Game::UpdateModel()
 {
     const float dt = ft.Mark();
+
+    if (wnd.kbd.KeyIsPressed(VK_UP))
+        ++score;
+    if (wnd.kbd.KeyIsPressed(VK_DOWN))
+        --score;
+    if (wnd.kbd.KeyIsPressed(VK_RIGHT))
+        score += 100;
+    if (wnd.kbd.KeyIsPressed(VK_LEFT))
+        score -= 100;
 }
 
 void Game::ComposeFrame()
 {
+    sb.Draw(5, 5, score, gfx);
 }
