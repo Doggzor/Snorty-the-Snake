@@ -52,5 +52,5 @@ void Game::UpdateModel()
 
 void Game::ComposeFrame()
 {
-    sb.Draw(5, 5, score, gfx);
+    sb.Draw(5, 5, score, Colors::Green, gfx);
 }
