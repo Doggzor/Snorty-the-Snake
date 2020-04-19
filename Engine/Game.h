@@ -45,7 +45,5 @@ private:
 	/********************************/
 	/*  User Variables              */
     FrameTimer ft;
-    Numbers sb;
-    int score = 0;
 	/********************************/
 };
