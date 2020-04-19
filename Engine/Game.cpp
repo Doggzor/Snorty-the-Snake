@@ -45,9 +45,9 @@ void Game::UpdateModel()
     if (wnd.kbd.KeyIsPressed(VK_DOWN))
         --score;
     if (wnd.kbd.KeyIsPressed(VK_RIGHT))
-        score += 100;
+        score += 1000;
     if (wnd.kbd.KeyIsPressed(VK_LEFT))
-        score -= 100;
+        score -= 1000;
 }
 
 void Game::ComposeFrame()
