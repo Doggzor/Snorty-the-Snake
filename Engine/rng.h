@@ -13,9 +13,9 @@ public:
 	{
 		return std::uniform_real_distribution<float>(min, max)(std::mt19937(std::random_device()()));
 	}
-	static bool rdm_outcome(int success_chance)
+	static bool rdm_bool(float true_chance)
 	{
-		return rdm_int(0, 100) <= success_chance;
+		return rdm_float(0.0f, 100.0f) <= true_chance;
 	}
 	static Color rdm_color()
 	{
