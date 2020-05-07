@@ -42,38 +42,5 @@ void Game::UpdateModel()
 
 void Game::ComposeFrame()
 {
-    gfx.DrawLine(a, b, Colors::White);
-    gfx.DrawLine(b, c, Colors::White);
-    gfx.DrawLine(c, d, Colors::White);
-    gfx.DrawLine(d, a, Colors::White);
-    gfx.DrawLine(a, c, Colors::Orange);
-    gfx.DrawLine(b, d, Colors::Orange);
-    gfx.DrawLine(0, 0, gfx.ScreenWidth, gfx.ScreenHeight, Colors::Red);
-    gfx.DrawLine(0, gfx.ScreenHeight, gfx.ScreenWidth, 0, Colors::Red);
-    gfx.DrawCircle(-10, -10, 60, Colors::Cyan);
-    gfx.DrawCircleEmpty(810, -10, 90, Colors::Green);
-    gfx.DrawRectDim(-30, 630, 50, -50, Colors::Magenta);
-    gfx.DrawRectEmpty(830, 630, -50, -50, 10, Colors::Yellow);
 }
 
-void Game::drawHPbar(const Vec2& topleft, float maxWidth, float height, float maxHealth, float health)
-{
-    //Colors (goes slowly from RED at very low HP to YELLOW at around half HP to GREEN at full HP)
-    //Green ( equal to 255 if HP is 50% or over, then starts decreasing as HP decreases)
-    int G = (int)((health / (maxHealth / 2.0f)) * 255.0f);
-    if (G > 255) G = 255;
-    else if (G < 0) G = 0;
-    //Red ( equal to 0 if HP is full then starts increasing as HP decreases, max value is 255 at 50% HP or lower)
-    int R = (int)((maxHealth - health) / (maxHealth / 2.0f) * 255.0f);
-    if (R > 255) R = 255;
-    else if (R < 0) R = 0;
-    //Position
-    const int x = (int)topleft.x;
-    const int y = (int)topleft.y;
-    //Width
-    const float fWidth = maxWidth * (health / maxHealth);
-    int nWidth = (int)fWidth;
-    const int nHeight = (int)height;
-    if (fWidth < 1.0f && fWidth > 0.0f) nWidth = 1;
-    gfx.DrawRectDim(x, y, nWidth, nHeight, Colors::MakeRGB(R, G, 0));
-}

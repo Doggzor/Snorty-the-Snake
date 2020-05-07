@@ -24,6 +24,7 @@
 #include "Mouse.h"
 #include "Graphics.h"
 #include "Numbers.h"
+#include "rng.h"
 #include "FrameTimer.h"
 #include "Vec2.h"
 
@@ -39,7 +40,6 @@ private:
 	void UpdateModel();
 	/********************************/
 	/*  User Functions              */
-    void drawHPbar(const Vec2& topleft, float maxWidth, float height, float maxHealth, float health);
 	/********************************/
 private:
 	MainWindow& wnd;
@@ -47,9 +47,5 @@ private:
 	/********************************/
 	/*  User Variables              */
     FrameTimer ft;
-    Vec2 a = { 150, 30 };
-    Vec2 b = { 70, 300 };
-    Vec2 c = { 550, 480 };
-    Vec2 d = { 400, 70 };
 	/********************************/
 };
