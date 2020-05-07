@@ -30,7 +30,7 @@ Game::Game( MainWindow& wnd )
 
 void Game::Go()
 {
-	gfx.BeginFrame();	
+	gfx.BeginFrame();
 	UpdateModel();
 	ComposeFrame();
 	gfx.EndFrame();
@@ -42,9 +42,21 @@ void Game::UpdateModel()
 
 void Game::ComposeFrame()
 {
+    gfx.DrawLine(a, b, Colors::White);
+    gfx.DrawLine(b, c, Colors::White);
+    gfx.DrawLine(c, d, Colors::White);
+    gfx.DrawLine(d, a, Colors::White);
+    gfx.DrawLine(a, c, Colors::Orange);
+    gfx.DrawLine(b, d, Colors::Orange);
+    gfx.DrawLine(0, 0, gfx.ScreenWidth, gfx.ScreenHeight, Colors::Red);
+    gfx.DrawLine(0, gfx.ScreenHeight, gfx.ScreenWidth, 0, Colors::Red);
+    gfx.DrawCircle(-10, -10, 60, Colors::Cyan);
+    gfx.DrawCircleEmpty(810, -10, 90, Colors::Green);
+    gfx.DrawRectDim(-30, 630, 50, -50, Colors::Magenta);
+    gfx.DrawRectEmpty(830, 630, -50, -50, 10, Colors::Yellow);
 }
 
-void Game::drawHPbar(float maxWidth, float height, float maxHealth, float health, const Vec2& topleft)
+void Game::drawHPbar(const Vec2& topleft, float maxWidth, float height, float maxHealth, float health)
 {
     //Colors (goes slowly from RED at very low HP to YELLOW at around half HP to GREEN at full HP)
     //Green ( equal to 255 if HP is 50% or over, then starts decreasing as HP decreases)

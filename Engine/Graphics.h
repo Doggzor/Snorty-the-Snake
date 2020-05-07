@@ -24,6 +24,7 @@
 #include <wrl.h>
 #include "ChiliException.h"
 #include "Colors.h"
+#include "Vec2.h"
 
 class Graphics
 {
@@ -65,6 +66,11 @@ public:
 	void DrawRectEmpty(int x, int y, int width, int height, int thickness, Color c);
 	void DrawCircle(int x, int y, int r, Color c);
 	void DrawCircleEmpty(int x, int y, int r, Color c);
+	void DrawLine(const Vec2& firstPos, const Vec2& secondPos, Color c);
+	void DrawLine(int x0, int y0, int x1, int y1, Color c)
+	{
+		DrawLine({ (float)x0, (float)y0 }, { (float)x1, (float)y1 }, c);
+	}
 	~Graphics();
 private:
 	Microsoft::WRL::ComPtr<IDXGISwapChain>				pSwapChain;

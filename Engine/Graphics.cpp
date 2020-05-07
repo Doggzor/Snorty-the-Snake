@@ -346,19 +346,33 @@ void Graphics::DrawRectEmpty(int x, int y, int width, int height, int thickness,
 
 void Graphics::DrawCircle(int x, int y, int r, Color c)
 {
+	//const int r_sq = r * r;
+	//for (int b = 0; y + b * b < y + r_sq; ++b)
+	//{
+	//	for (int a = 0; x + a * a < x + r_sq - b * b; ++a)
+	//	{
+	//		if ((x + a < ScreenWidth) && (y + b < ScreenHeight))
+	//			PutPixel(x + a, y + b, c);
+	//		if ((x + a < ScreenWidth) && (y - b >= 0))
+	//			PutPixel(x + a, y - b, c);
+	//		if ((x - a >= 0) && (y + b < ScreenHeight))
+	//			PutPixel(x - a, y + b, c);
+	//		if ((x - a >= 0) && (y - b >= 0))
+	//			PutPixel(x - a, y - b, c);
+	//	}
+	//}
 	const int r_sq = r * r;
-	for (int b = 0; y + b * b < y + r_sq; ++b)
+	for (int b = y - r + 1; b < y + r; ++b)
 	{
-		for (int a = 0; x + a * a < x + r_sq - b * b; ++a)
+		for (int a = x - r + 1; a < x + r; ++a)
 		{
-			if ((x + a < ScreenWidth) && (y + b < ScreenHeight))
-				PutPixel(x + a, y + b, c);
-			if ((x + a < ScreenWidth) && (y - b >= 0))
-				PutPixel(x + a, y - b, c);
-			if ((x - a >= 0) && (y + b < ScreenHeight))
-				PutPixel(x - a, y + b, c);
-			if ((x - a >= 0) && (y - b >= 0))
-				PutPixel(x - a, y - b, c);
+			const int x_diff = x - a;
+			const int y_diff = y - b;
+			if ((x_diff * x_diff + y_diff * y_diff <= r_sq))
+			{
+				if (a >= 0 && a < ScreenWidth && b >= 0 && b < ScreenHeight)
+					PutPixel(a, b, c);
+			}
 		}
 	}
 }
@@ -380,6 +394,20 @@ void Graphics::DrawCircleEmpty(int x, int y, int r, Color c)
 		}
 	}
 }
+
+void Graphics::DrawLine(const Vec2& firstPos, const Vec2& secondPos, Color c)
+{
+	Vec2 a = firstPos;
+	const Vec2 b = secondPos;
+	const Vec2 dir = (secondPos - firstPos).GetNormalized();
+	while (abs(a.x - b.x) > 0.5f || abs(a.y - b.y) > 0.5f)
+	{
+		if((int)a.x >= 0 && (int)a.x < ScreenWidth && (int)a.y >= 0 && (int)a.y < ScreenHeight)
+		PutPixel((int)a.x, (int)a.y, c);
+		a += dir;
+	}
+}
+
 
 //////////////////////////////////////////////////
 //           Graphics Exception
