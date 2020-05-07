@@ -25,6 +25,7 @@
 #include "Graphics.h"
 #include "Numbers.h"
 #include "FrameTimer.h"
+#include "Vec2.h"
 
 class Game
 {
@@ -38,6 +39,7 @@ private:
 	void UpdateModel();
 	/********************************/
 	/*  User Functions              */
+    void drawHPbar(float maxWidth, float height, float maxHealth, float health, const Vec2& topleft);
 	/********************************/
 private:
 	MainWindow& wnd;
