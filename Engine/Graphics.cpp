@@ -351,13 +351,13 @@ void Graphics::DrawCircle(int x, int y, int r, Color c)
 	//{
 	//	for (int a = 0; x + a * a < x + r_sq - b * b; ++a)
 	//	{
-	//		if ((x + a < ScreenWidth) && (y + b < ScreenHeight))
+	//		if ((x + a < ScreenWidth) && (y + b < ScreenHeight)) //Checks if off screen boundries
 	//			PutPixel(x + a, y + b, c);
-	//		if ((x + a < ScreenWidth) && (y - b >= 0))
+	//		if ((x + a < ScreenWidth) && (y - b >= 0)) //Checks if off screen boundries
 	//			PutPixel(x + a, y - b, c);
-	//		if ((x - a >= 0) && (y + b < ScreenHeight))
+	//		if ((x - a >= 0) && (y + b < ScreenHeight)) //Checks if off screen boundries
 	//			PutPixel(x - a, y + b, c);
-	//		if ((x - a >= 0) && (y - b >= 0))
+	//		if ((x - a >= 0) && (y - b >= 0)) //Checks if off screen boundries
 	//			PutPixel(x - a, y - b, c);
 	//	}
 	//}
@@ -370,7 +370,7 @@ void Graphics::DrawCircle(int x, int y, int r, Color c)
 			const int y_diff = y - b;
 			if ((x_diff * x_diff + y_diff * y_diff <= r_sq))
 			{
-				if (a >= 0 && a < ScreenWidth && b >= 0 && b < ScreenHeight)
+				if (a >= 0 && a < ScreenWidth && b >= 0 && b < ScreenHeight) //Checks if off screen boundries
 					PutPixel(a, b, c);
 			}
 		}
@@ -388,7 +388,7 @@ void Graphics::DrawCircleEmpty(int x, int y, int r, Color c)
 			const int y_diff = y - b;
 			if ((x_diff * x_diff + y_diff * y_diff <= r_sq) && (x_diff * x_diff + y_diff * y_diff > r_sq - r * 3))
 			{
-				if(a >= 0 && a < ScreenWidth && b >=0 && b < ScreenHeight)
+				if(a >= 0 && a < ScreenWidth && b >=0 && b < ScreenHeight) //Checks if off screen boundries
 				PutPixel(a, b, c);
 			}
 		}
@@ -402,7 +402,7 @@ void Graphics::DrawLine(const Vec2& firstPos, const Vec2& secondPos, Color c)
 	const Vec2 dir = (secondPos - firstPos).GetNormalized();
 	while (abs(a.x - b.x) > 0.5f || abs(a.y - b.y) > 0.5f)
 	{
-		if((int)a.x >= 0 && (int)a.x < ScreenWidth && (int)a.y >= 0 && (int)a.y < ScreenHeight)
+		if((int)a.x >= 0 && (int)a.x < ScreenWidth && (int)a.y >= 0 && (int)a.y < ScreenHeight) //Checks if off screen boundries
 		PutPixel((int)a.x, (int)a.y, c);
 		a += dir;
 	}
