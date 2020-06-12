@@ -50,12 +50,19 @@ void Numbers::Draw(int x, int y, int num, Color c, Graphics& gfx) const
 		draw_comma(offsetneg + x + offset2 + offset3 + offset4, y + 22, c, gfx);
 		offsetcomma = 6;
 	}
-	for (int nHTH = 100000; nHTH <= number; ++numberHTH) number -= 100000;
-	for (int nTTH = 10000; nTTH <= number; ++numberTTH) number -= 10000;
-	for (int nTH = 1000; nTH <= number; ++numberTH) number -= 1000;
-	for (int nH = 100; nH <= number; ++numberH) number -= 100;
-	for (int nT = 10; nT <= number; ++numberT) number -= 10;
-	for (int nO = 0; nO < number; ++numberO) --number;
+	//for (int nHTH = 100000; nHTH <= number; ++numberHTH) number -= 100000;
+	//for (int nTTH = 10000; nTTH <= number; ++numberTTH) number -= 10000;
+	//for (int nTH = 1000; nTH <= number; ++numberTH) number -= 1000;
+	//for (int nH = 100; nH <= number; ++numberH) number -= 100;
+	//for (int nT = 10; nT <= number; ++numberT) number -= 10;
+	//for (int nO = 0; nO < number; ++numberO) --number;
+
+	numberHTH = number / 100000;
+	numberTTH = (number % 100000) / 10000;
+	numberTH = (number % 10000) / 1000;
+	numberH = (number % 1000) / 100;
+	numberT = (number % 100) / 10;
+	numberO = number % 10;
 
 	if (numberO == 0)
 		drawnum0(offsetneg + x + offsetcomma + offset0 + offset1 + offset2 + offset3 + offset4, y, c,  gfx);
