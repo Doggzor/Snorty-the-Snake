@@ -48,4 +48,5 @@ private:
 	/*  User Variables              */
     FrameTimer ft;
 	/********************************/
+	int test; 
 };
