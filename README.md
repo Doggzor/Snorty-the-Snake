@@ -26,7 +26,8 @@ Mouse / kbd: input (polled and event-driven)
 Sound: loading and playing sounds
 
 c++
-VS 2019 
+VS 2019
+## Upgrades Info 
 
 ## D&C team
 
