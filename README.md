@@ -2,10 +2,11 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Upgrades](#Upgrades Info)
+* [D&C team](#D&C team)
 * [Setup](#setup)
 
 ## General info
-The project is the development of full functional 2d software by D&C team for making small desctop games.
+The project is the development of full functional 2d software by D&C team for making small desktop games.
 
 Game made using D&C software: https://gitlab.com/CorvusUltima/galaxy
 
@@ -27,7 +28,21 @@ Sound: loading and playing sounds
 c++
 VS 2019 
 
-## Upgrades Info 
+## D&C team
+
+D&C is a duo of software developers.
+
+Luka Bucan:
+
+Dedicated and very committed team member with great attention to detail and monitoring of project development.
+
+With relatively little experience in programming, it already largely produces amazing software solutions that can have a realistic application to various projects.
+
+Nemanja Pavlovic:
+
+Motivated team member, always ready for additional work and learning new skills that can be applied both to the project itself and to personal development in software waters.
+
+Unconventional, practical and strategic thinking contributes to overcoming challenges in everyday work.
 
 
 
@@ -36,7 +51,8 @@ VS 2019
 
 
 
-
+Luka Bucan
+Nemanja Pavlovic pavlovicn88@gmail.com
 
 
 	
