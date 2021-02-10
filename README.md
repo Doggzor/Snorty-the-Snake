@@ -45,14 +45,9 @@ Motivated team member, always ready for additional work and learning new skills 
 Unconventional, practical and strategic thinking contributes to overcoming challenges in everyday work.
 
 
+Luka Bucan:
 
-
-
-
-
-
-Luka Bucan
-Nemanja Pavlovic pavlovicn88@gmail.com
+Nemanja Pavlovic: pavlovicn88@gmail.com
 
 
 	
