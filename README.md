@@ -17,7 +17,6 @@ https://www.youtube.com/watch?v=PwuIEMUFUnQ
 The goal of this software is exclusively to learn and master  concepts within software development and this is a working version of the same in constant updating .
 	
 ## Technologies
-Project is created with:
 The basic concept of the software is an upgrade of the Chili Framework in the basic version that comes with the following features
 
 Gfx: putpixel / screenwidth / height
