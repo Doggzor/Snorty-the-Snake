@@ -1,7 +1,6 @@
  ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Upgrades](#Upgrades Info)
 * [D&C team](#D&C team)
 * [Setup](#setup)
 
@@ -27,7 +26,6 @@ Sound: loading and playing sounds
 
 c++
 VS 2019
-## Upgrades Info 
 
 ## D&C team
 
@@ -46,7 +44,7 @@ Motivated team member, always ready for additional work and learning new skills 
 Unconventional, practical and strategic thinking contributes to overcoming challenges in everyday work.
 
 
-Luka Bucan:
+Luka Bucan:bucan.luka88@gmail.com
 
 Nemanja Pavlovic: pavlovicn88@gmail.com
 
