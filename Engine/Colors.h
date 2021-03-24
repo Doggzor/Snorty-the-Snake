@@ -91,6 +91,14 @@ public:
 	{
 		dword = (dword & 0xFFFFFF00u) | b;
 	}
+	Color operator* (float number) const
+	{
+		return Color((int)((float)GetR() * number), (int)((float)GetG() * number), (int)((float)GetB() * number));
+	}
+	Color& operator*= (float number)
+	{
+		return *this = *this * number;
+	}
 };
 
 namespace Colors

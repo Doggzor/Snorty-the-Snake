@@ -1,0 +1,16 @@
+***Configuration File for Dynamic Snake***
+
+[Board Size]
+16 12
+
+[Tile Size]
+40
+
+[Speedup Rate]
+1.05
+
+[Drug Amount]
+100
+
+[Food Amount]
+5

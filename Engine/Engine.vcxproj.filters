@@ -69,6 +69,18 @@
     <ClInclude Include="Vec2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Rect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Board.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Snake.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Location.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DXErr.cpp">
@@ -107,6 +119,15 @@
     <ClCompile Include="Vec2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Rect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Board.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Snake.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="FramebufferPS.hlsl">
@@ -125,5 +146,10 @@
     <Image Include="Chili.ico">
       <Filter>Resource Files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="config.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
